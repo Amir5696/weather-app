@@ -2,8 +2,9 @@ const weather = require("./utils/weather");
 const path = require("path");
 const hbs = require("hbs");
 const express = require("express");
-const app = express();
 
+const app = express();
+const port = process.env.PORT || 3000;
 
 const publicDir = path.join(__dirname, "../public");
 const viewsDir = path.join(__dirname, "../templates/views");
@@ -72,10 +73,10 @@ app.get("*", (req, res) => {
   });
 });
 
-app.listen(3000, (err) => {
+app.listen(port, (err) => {
   if (err) {
     console.log(err);
   } else {
-    console.log("server is running on port 3000");
+    console.log("server is running on port 3000 " + port);
   }
 });
