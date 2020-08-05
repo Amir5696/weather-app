@@ -33,7 +33,10 @@ weatherForm.addEventListener("submit", (e) => {
         message1.textContent = "Please enter the location!";
       } else {
         console.log(data);
-        message1.textContent = `Tempurture : ${data.forecast}`;
+        message1.textContent = `Summary : Current temperture is ${data.forecast}, 
+        today maximum temp is ${data.tempMax} 
+        and minimum temp is ${data.tempMin}
+        and there is ${data.clouds.all} cloud is in the sky`;
         message2.textContent = `Location : ${data.location}`;
       }
     });

@@ -6,7 +6,7 @@ const weather = (city, country, callback) => {
   )},${encodeURIComponent(
     country
   )}&APPID=6b114feb3f56f96a182e679fe759427c&units=metric`;
-
+  console.log(url);
   request({ url, json: true }, (err, { body } = {}) => {
     if (err) {
       callback(err, null);

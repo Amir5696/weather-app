@@ -39,6 +39,9 @@ app.get("/weather", (req, res) => {
     console.log(weatherRes);
     res.send({
       forecast: weatherRes.main.temp,
+      tempMin: weatherRes.main.temp_min,
+      tempMax: weatherRes.main.temp_max,
+      clouds: weatherRes.clouds,
       location: `${weatherRes.name}${
         weatherRes.sys.country ? " " + weatherRes.sys.country : ""
       }`,
